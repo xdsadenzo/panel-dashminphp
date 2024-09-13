@@ -1,4 +1,9 @@
+<?php
+include('PHP/query.php');
+?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -64,7 +69,7 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Category</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="addcategory.php" class="dropdown-item">Add Categories</a>
-                            <a href="typography.html" class="dropdown-item">Typography</a>
+                            <a href="viewcategory.php" class="dropdown-item">view categories</a>
                             <a href="element.html" class="dropdown-item">Other Elements</a>
                         </div>
                     </div>
