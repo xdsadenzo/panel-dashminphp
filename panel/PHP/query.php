@@ -31,7 +31,7 @@ $extension = pathinfo($catimage,PATHINFO_EXTENSION);
 $des = 'img/categories/'.$catimage;
 if($extension == "jpg" || $extension == "jpeg" || $extension == "png" || $extension == "webp"){
     if(move_uploaded_file($catTmpname,$des)){
-        $query = $pdo->prepare("update categories set catName:pn, catImage:pi where id = :pid");
+        $query = $pdo->prepare("update categories set catName=:pn, catImage=:pi where id = :pid");
         $query->bindparam("pid",$id);
         $query->bindParam("pn",$catname);
         $query->bindParam("pi",$catimage);
@@ -41,8 +41,9 @@ if($extension == "jpg" || $extension == "jpeg" || $extension == "png" || $extens
        </script>";
    
     }
+}
 }else{
-    $query = $pdo->prepare("update categories set catName:pn where id = :pid");
+    $query = $pdo->prepare("update categories set catName=:pn where id = :pid");
     $query->bindparam("pid",$id);
     $query->bindParam("pn",$catname);
        $query->execute();
@@ -50,7 +51,7 @@ if($extension == "jpg" || $extension == "jpeg" || $extension == "png" || $extens
    location.assign('viewcategory.php')
    </script>";
 }
-}
+
 }
 if(isset($_GET['deleteid'])){
     $id = $_GET['deleteid'];
